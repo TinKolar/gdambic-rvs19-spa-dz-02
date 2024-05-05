@@ -24,24 +24,40 @@ bool game_of_life::celija_zauzeta(int i, int j){
 int game_of_life::broj_zivih_celija_susjeda(int i, int j)
 {
     int n = 0;
-    if (celija_zauzeta(i - 1, j - 1))
-        n++;
-    if (celija_zauzeta(i - 1, j))
-        n++;
-    if (celija_zauzeta(i - 1, j + 1))
-        n++;
-    if (celija_zauzeta(i, j - 1))
-        n++;
-    if (celija_zauzeta(i, j + 1))
-        n++;
-    if (celija_zauzeta(i + 1, j - 1))
-        n++;
-    if (celija_zauzeta(i + 1, j))
-        n++;
-    if (celija_zauzeta(i + 1, j + 1))
-        n++;
-
-
+    //provjera svih osam susjednih celija
+    if (i != 0) {
+        if (j != 0) {
+            if (celija_zauzeta(i - 1, j - 1))
+                n++;
+        }
+        if (celija_zauzeta(i - 1, j))
+            n++;
+        if (j != STUPACA-1) {
+            if (celija_zauzeta(i - 1, j + 1))
+                n++;
+        }
+    }
+    if (j != 0) {
+        if (celija_zauzeta(i, j - 1))
+            n++;
+    }
+    if (j != STUPACA - 1) {
+        if (celija_zauzeta(i, j + 1))
+            n++;
+    }
+    if (i != REDAKA - 1) {
+        if (j != 0) {
+            if (celija_zauzeta(i + 1, j - 1))
+                n++;
+        }
+        if (celija_zauzeta(i + 1, j))
+            n++;
+        if (j != STUPACA - 1) {
+            if (celija_zauzeta(i + 1, j + 1))
+                n++;
+        }
+    }
+    
     return n;
 }
 
@@ -96,7 +112,7 @@ void game_of_life::iscrtaj()
                 cout << "O";
             }
             else {
-                cout << " ";
+                cout << "X";
             }
         }
         cout << endl;
