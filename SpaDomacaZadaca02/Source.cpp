@@ -14,7 +14,7 @@ int main() {
 	srand(time(nullptr));
 
 	int refresh_rate;
-	cout << "Upisite brzinu refresh rate (u milisekundama): ";
+	cout << "Upisite brzinu refresh rate (u milisekundama, preporuca se: 42): ";
 	cin >> refresh_rate;
 	if (refresh_rate < 16)
 		refresh_rate = 16;

@@ -245,8 +245,8 @@ void game_of_life::croatian_flag_mode()
             if (checker < kockice_size && !crvene) {
                 checker++;
                 red_now[i][j] = 255;
-                green_now[i][j] = 225;
-                blue_now[i][j] = 225;
+                green_now[i][j] = 255;
+                blue_now[i][j] = 255;
             }
             if (checker == kockice_size && !crvene) {
                 crvene = true;
@@ -458,7 +458,7 @@ game_of_life::game_of_life(sf::RenderWindow* window, int mode) :ekran(window)//k
     //croatia mode grb hardcoded
     if (mode == 2) {
         croatian_flag_mode();
-        mode_counter = mode * 8;
+        mode_counter = mode * 20;
     }
 }
 
