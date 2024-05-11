@@ -126,6 +126,9 @@
   <ItemGroup>
     <ClInclude Include="game_of_life.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Font Include="Light Stories.ttf" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
